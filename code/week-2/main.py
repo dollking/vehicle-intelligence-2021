@@ -113,4 +113,5 @@ if __name__ == '__main__':
         fig, graph_animator.animate, blit=True, interval=1000, repeat=False,
         frames=len(graph)
     )
+    ani.save('exAnimation.gif', writer='imagemagick', fps=1, dpi=100)
     plt.show()

@@ -8,7 +8,7 @@ sensor_range = 50
 # GNSS measurement uncertainty [x (m), y (m), theta (rad)]
 pos_std = [0.3, 0.3, 0.01]
 # Landmark measurement uncertainty [x (m), y (m)]
-landmark_std = [0.3, 0.3]
+landmark_std = [3., 3.]
 
 # Read in the map data comprising
 #   (landmark x, landmark y, id).
@@ -86,4 +86,5 @@ if __name__ == '__main__':
                           for l in particle['assoc']],
         })
     # Go plot the results.
+
     plot_2D(graph)

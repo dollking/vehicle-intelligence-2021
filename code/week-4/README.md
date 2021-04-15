@@ -5,6 +5,9 @@
 [//]: # (Image References)
 [empty-update]: ./empty-update.gif
 [example]: ./example.gif
+[result1]: ./particle_result_1.gif
+[result2]: ./particle_result_2.gif
+[result3]: ./particle_result_3.gif
 
 ## Assignment
 
@@ -28,3 +31,13 @@ while a reasonable implementation of the above mentioned methods (assignments) w
 ![Particle Filter Example][example]
 
 Carefully read comments in the two method bodies and write Python code that does the job.
+
+## Assignment Result
+### Default Parameter Result
+![Default parameter][result1]
+
+### Landmark std 10 times Result
+![LD std 3.0][result2]
+
+### Position std 10 times Result
+![Pos std 3.0][result3]

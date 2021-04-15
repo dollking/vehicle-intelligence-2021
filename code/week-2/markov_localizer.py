@@ -42,12 +42,6 @@ def motion_model(position, mov, priors, map_size, stdev):
     # Initialize the position's probability to zero.
     position_prob = 0.0
 
-    # TODO: Loop over state space for all possible prior positions,
-    # calculate the probability (using norm_pdf) of the vehicle
-    # moving to the current position from that prior.
-    # Multiply this probability to the prior probability of
-    # the vehicle "was" at that prior position.
-
     for i in range(map_size):
         position_prob += norm_pdf(position - i, mov, stdev) * priors[i]
 
@@ -57,17 +51,6 @@ def motion_model(position, mov, priors, map_size, stdev):
 def observation_model(landmarks, observations, pseudo_ranges, stdev):
     # Initialize the measurement's probability to one.
     distance_prob = 1.0
-
-    # TODO: Calculate the observation model probability as follows:
-    # (1) If we have no observations, we do not have any probability.
-    # (2) Having more observations than the pseudo range indicates that
-    #     this observation is not possible at all.
-    # (3) Otherwise, the probability of this "observation" is the product of
-    #     probability of observing each landmark at that distance, where
-    #     that probability follows N(d, mu, sig) with
-    #     d: observation distance
-    #     mu: expected mean distance, given by pseudo_ranges
-    #     sig: squared standard deviation of measurement
 
     if len(observations) == 0 or len(observations) > len(pseudo_ranges):  # (1)/(2)
         return 0.

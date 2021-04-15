@@ -5,6 +5,7 @@
 [//]: # (Image References)
 [kalman-result]: ./kalman_filter/graph.png
 [EKF-results]: ./EKF/plot.png
+[result]: ./EKF/EKF_Example.png
 
 ## Kalman Filter Example
 
@@ -52,3 +53,6 @@ The program consists of five modules:
 ### Assignment
 
 Complete the implementation of EKF with sensor fusion by writing the function `update_ekf()` in the module `kalman_filter`. Details are given in class and instructions are included in comments.
+
+### Assignment Result
+![Assignment result][result]

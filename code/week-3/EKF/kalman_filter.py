@@ -24,12 +24,18 @@ class KalmanFilter:
         self.P = self.P - np.dot(np.dot(K, self.H), self.P)
 
     def update_ekf(self, z):
-        # TODO: Implement EKF update for radar measurements
-        # 1. Compute Jacobian Matrix H_j
-        # 2. Calculate S = H_j * P' * H_j^T + R
-        # 3. Calculate Kalman gain K = H_j * P' * Hj^T + R
-        # 4. Estimate y = z - h(x')
-        # 5. Normalize phi so that it is between -PI and +PI
-        # 6. Calculate new estimates
-        #    x = x' + K * y
-        #    P = (I - K * H_j) * P
+        H_j = Jacobian(self.x)
+
+        S = np.dot(np.dot(H_j, self.P), H_j.T) + self.R
+
+        K = np.dot(np.dot(self.P, H_j.T), np.linalg.inv(S))
+
+        rad = sqrt(self.x[0] ** 2 + self.x[1] ** 2)
+        rad_v = ((self.x[0] * self.x[2]) + (self.x[1] * self.x[3])) / rad
+        hx = np.array([rad, atan2(self.x[1], self.x[0]), rad_v])
+
+        y = z - hx
+        y[1] = y[1] % -np.pi if y[1] < 0 else y[1] % np.pi
+
+        self.x += np.dot(K, y)
+        self.P = self.P - np.dot(np.dot(K, H_j), self.P)

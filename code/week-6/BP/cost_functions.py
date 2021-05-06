@@ -8,6 +8,7 @@ TrajectoryData = namedtuple(
         'end_distance_to_goal',
     ]
 )
+LaneSpeed = [6, 7, 8, 9]
 
 '''
 Provided here are templates for two possible suggestions for cost functions,
@@ -20,8 +21,8 @@ computed by get_helper_data function.
 '''
 
 # weights for costs
-REACH_GOAL = 0
-EFFICIENCY = 0
+REACH_GOAL = 10
+EFFICIENCY = 5
 
 DEBUG = False
 
@@ -32,14 +33,20 @@ def goal_distance_cost(vehicle, trajectory, predictions, data):
     Cost of being out of goal lane also becomes larger as vehicle approaches
     the goal distance.
     '''
-    return 0
+    _, final, distance = data
+    return (final - vehicle.goal_lane) / distance
 
 def inefficiency_cost(vehicle, trajectory, predictions, data):
     '''
     Cost becomes higher for trajectories with intended lane and final lane
     that have slower traffic.
     '''
-    return 0
+    _, final, _ = data
+
+    v = LaneSpeed[final]
+    cost = (vehicle.target_speed - v) / vehicle.target_speed
+
+    return cost if cost > 0 else 0
 
 def calculate_cost(vehicle, trajectory, predictions):
     '''

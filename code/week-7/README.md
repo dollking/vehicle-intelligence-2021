@@ -5,6 +5,10 @@
 [//]: # (Image References)
 [has-example]: ./hybrid_a_star/has_example.png
 [ptg-example]: ./PTG/ptg_example.png
+[result1]: ./result1.png
+[result2]: ./result2.png
+[result3]: ./result3.png
+[result4]: ./result4.png
 
 ## Assignment: Hybrid A* Algorithm
 
@@ -30,6 +34,19 @@ You have to implement the following sections of code for the assignment:
 You are invited to tweak various parameters including the number of stacks (heading discretization granularity) and the vehicle's velocity. It will also be interesting to adjust the grid granularity of the map. The following figure illustrates an example output of the program with the default map given in `main.py` and `NUM_THETA_CELLS = 360` while the vehicle speed is set to 0.5.
 
 ![Example Output of the Hybrid A* Test Program][has-example]
+
+## Assignment Result
+### NUM_THETA_CELLS: 90, speed: 1.0
+![Assignment result1][result1]
+
+### NUM_THETA_CELLS: 180, speed: 1.0
+![Assignment result2][result2]
+
+### NUM_THETA_CELLS: 360, speed: 0.5
+![Assignment result3][result3]
+
+### NUM_THETA_CELLS: 360, speed: 0.2
+![Assignment result4][result4]
 
 ---
 

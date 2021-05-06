@@ -2,6 +2,9 @@
 
 ---
 
+[result1]: ./result1.png
+[result2]: ./result2.png
+
 ## Examples
 
 We have four small working examples for demonstration of basic path planning algorithms:
@@ -38,3 +41,10 @@ This example is intended to illustrate the algorithm's capability of generating 
 because of the prohibitively high cost associated with a left turn.
 
 You are highly encouraged to experiment with different (more complex) maps and different cost settings for each type of action.
+
+## Assignment Result
+### Default Cost (2, 1, 20)
+![Assignment result1][result1]
+
+### All Same Cost (2, 2, 2)
+![Assignment result2][result2]

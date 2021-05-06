@@ -2,6 +2,12 @@
 
 ---
 
+[result1]: ./GNB/result1.png
+[result2]: ./GNB/result2.png
+[result3]: ./GNB/result3.png
+[BP_result1]: ./BP/result1.png
+[BP_result2]: ./BP/result2.png
+
 ## Assignment #1
 
 Under the directory [./GNB](./GNB), you are given two Python modules:
@@ -28,6 +34,15 @@ The training set has a total of 750 data points, whereas the test set contains 2
 
 The GNB classifier is trained by computing the mean and variance of each component in the state variable for each observed behaviour. Later it is used to predict the behaviour by computing the Gaussian probability of an observed state for each behaviour and taking the maximum. You are going to implement that functionality. For convcenience, a separate function `gaussian_prob()` is already given in the module `classifier.py`.
 
+## Assignment #1 Result
+### Using Process Variables
+![Assignment result1][result1]
+
+### Using Normalized Process Variables (Min-Max)
+![Assignment result2][result2]
+
+### Using Standardized Process Variables
+![Assignment result3][result3]
 
 ---
 
@@ -72,3 +87,10 @@ You are also invited to experiment with a number of different simulation setting
 and so on.
 
 Remember that our state machine should be geared towards reaching the goal in an *efficient* manner. Try to compare a behaviour that switches to the goal lane as soon as possible (note that the goal position is in the slowest lane in the given setting) and one that follows a faster lane and move to the goal lane as the remaining distance decreases. Observe different behaviour taken by the ego vehicle when different weights are given to different cost functions, and also when other cost metrics (additional cost functions) are used.
+
+## Assignment #2 Result
+### Weight for Cost (REACH_GOAL: 10, EFFICIENCY: 2)
+![Assignment result1][BP_result1]
+
+### Weight for Cost (REACH_GOAL: 10, EFFICIENCY: 5)
+![Assignment result2][BP_result2]

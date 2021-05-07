@@ -9,6 +9,8 @@
 [result2]: ./result2.png
 [result3]: ./result3.png
 [result4]: ./result4.png
+[before]: ./before.png
+[after]: ./after.png
 
 ## Assignment: Hybrid A* Algorithm
 
@@ -47,6 +49,13 @@ You are invited to tweak various parameters including the number of stacks (head
 
 ### NUM_THETA_CELLS: 360, speed: 0.2
 ![Assignment result4][result4]
+
+### Modify Loop Condition in 'reconstruct_path function'
+#### Before
+![Assignment before][before]
+
+#### After
+![Assignment after][after]
 
 ---
 
